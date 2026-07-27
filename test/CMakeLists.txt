@@ -9,11 +9,15 @@ FetchContent_MakeAvailable(googletest)
 
 add_executable(minidb_tests
     hello_test.cpp
+    page_test.cpp
+    tuple_test.cpp
+    serializer_test.cpp
 )
 
 target_link_libraries(minidb_tests
     PRIVATE
         minidb
+        minidb_storage
         GTest::gtest_main
 )
 
