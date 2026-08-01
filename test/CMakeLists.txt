@@ -7,21 +7,35 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(googletest)
 
+
 add_executable(minidb_tests
+
     hello_test.cpp
-    page_test.cpp
-    tuple_test.cpp
-    serializer_test.cpp
+
+    storage/page_test.cpp
+    storage/tuple_test.cpp
+    storage/serializer_test.cpp
+
+    disk/disk_manager_test.cpp
+
+    buffer/lru_replacer_test.cpp
+    buffer/buffer_pool_manager_test.cpp
+
+    integration/page_disk_test.cpp
+    integration/persistence_test.cpp
 )
+
 
 target_link_libraries(minidb_tests
     PRIVATE
         minidb
         minidb_storage
+        minidb_disk
+        minidb_buffer
         GTest::gtest_main
 )
+
 
 include(GoogleTest)
 
 gtest_discover_tests(minidb_tests)
-

@@ -6,3 +6,5 @@ target_include_directories(minidb
 )
 
 add_subdirectory(storage)
+add_subdirectory(disk)
+add_subdirectory(buffer)
