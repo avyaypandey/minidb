@@ -62,6 +62,10 @@ class Page
     /// Returns the remaining usable space in the page.
     std::size_t FreeSpace() const;
 
+    char* GetData() { return reinterpret_cast<char*>(data_.data()); }
+
+    const char* GetData() const { return reinterpret_cast<const char*>(data_.data()); }
+
   private:
     struct Slot
     {

@@ -12,6 +12,9 @@ add_executable(minidb_tests
 
     hello_test.cpp
 
+    common/result_test.cpp
+    common/status_test.cpp
+
     storage/page_test.cpp
     storage/tuple_test.cpp
     storage/serializer_test.cpp
@@ -23,6 +26,8 @@ add_executable(minidb_tests
 
     integration/page_disk_test.cpp
     integration/persistence_test.cpp
+    integration/buffer_disk_test.cpp
+    integration/storage_integration_test.cpp
 )
 
 
